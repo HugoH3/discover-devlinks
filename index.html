@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+  <head>
+    <!--Adicionando o link da fonte que será utilizada-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!--Definindo a codificação dos caracteres-->
+    <meta charset="UTF-8" />
+    <!--Fazendo o viewport se adaptar a alterações da janela-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Discover</title>
+    <!--Linkando o arquivo CSS com a página-->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!--Atribuindo um id "container" à tag div-->
+    <div id="container">
+      <!--Tag filha onde será incluido a imagem do perfil-->
+      <div id="profile">
+        <!--Adicionando imagem de perfil e texto alternativo-->
+        <img
+          src="./assets/avatar.png"
+          alt="Foto de Hugo Herrera com um moletom preto, sorrindo, usando um óculos dourado hexagonal"
+        />
+        <!--Adicionando o username-->
+        <p>@devhugoh3</p>
+      </div>
+      <!--Criando o switch de light mode e atribuindo a função correspodente dentro do script-->
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+      <!--Criando uma lista de links-->
+      <ul>
+        <li>
+          <a href="https://github.com/HugoH3" target="_blank">GitHub</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/hugo-h-02332a2a5" target="_blank"
+            >Linkedin</a
+          >
+        </li>
+        <li>
+          <a href="https://leetcode.com/u/Snoopy3H/" target="_blank"
+            >Leetcode</a
+          >
+        </li>
+      </ul>
+      <div id="social-links">
+        <a href="https://www.instagram.com/snoopy3h/" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+      </div>
+      <footer>Feito por Hugo Herrera</footer>
+    </div>
+    <!--Adicionando script dos icones-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+     <!--Adicionando script para alternar o light mode-->
+    <script src="./script.js"></script>
+  </body>
+</html>
