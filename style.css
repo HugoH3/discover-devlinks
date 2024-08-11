@@ -37,8 +37,11 @@ body * {
 }
 
 #container {
-  /* Atribuindo valores às propriedades da caixa com id "container" */
-  width: 360px;
+  /* Ajustando dimensões do id container */
+  /* Nesse caso, ele sempre vai ocupar 100% da largura, até 588px */
+  
+  width: 100%px;
+  max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
 
