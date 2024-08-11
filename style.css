@@ -12,7 +12,7 @@
   --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
-  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --surface-color-hover: rgba(0, 0, 0, 0.1);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/sun.svg);
 }
@@ -22,7 +22,7 @@
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
-  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --surface-color-hover: rgba(255, 255, 255, 0.1);
   --highlight-color: rgba(255, 255, 255, 0.1);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
@@ -81,13 +81,20 @@ body * {
   position: absolute;
   top: 50%;
   right: 0;
-  left: initial;
+  left: 50%;
   z-index: 1;
   transform: translateY(-50%);
+
+  /* Colocando a animação de transição de dark para light*/
+  animation: slide-in 0.3s forwards;
 }
 .dark #switch button {
-  right: 0;
-  left: 0;
+  /* Colocando a animação de transição de light para dark*/
+  animation: slide-back 0.3s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color)
 }
 
 #switch span {
@@ -176,10 +183,9 @@ footer {
 }
 
 /* Media queries */
-
-/* Instruindo a variável bg-url para que a 
-partir de 700px o background de desktop seja exibido */
 @media (min-width: 700px) {
+  /* Instruindo a variável bg-url para que a 
+  partir de 700px o background de desktop seja exibido */
   :root {
     --bg-url: url(./assets/bg-desktop-light.jpg);
   }
@@ -187,3 +193,23 @@ partir de 700px o background de desktop seja exibido */
     --bg-url: url(./assets/bg-desktop.jpg);
   }
 }
+
+/* Animações */
+@keyframes slide-back {
+  from{
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes slide-in {
+  from{
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+
