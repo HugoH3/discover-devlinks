@@ -14,22 +14,23 @@
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
-  --switch-bg-url: url(./assets/sun.svg)
+  --switch-bg-url: url(./assets/sun.svg);
 }
 
-.dark{
+.dark {
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(255, 255, 255, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.1);
-  --switch-bg-url: url(./assets/moon-stars.svg)
+  --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
+/* Configurando o body e colocando */
 body {
-  background: var(--bg-url)
-  no-repeat top center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 body * {
   font-family: "Inter", sans-serif;
@@ -39,12 +40,11 @@ body * {
 #container {
   /* Ajustando dimensões do id container */
   /* Nesse caso, ele sempre vai ocupar 100% da largura, até 588px */
-  
-  width: 100%px;
+
+  width: 100%;
   max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
-
 }
 
 /* Alterando valores no elemento profile e seus filhos */
@@ -70,7 +70,7 @@ body * {
 }
 
 /* Adaptando botão para o light/dark mode */
-#switch button{
+#switch button {
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
@@ -99,7 +99,7 @@ body * {
   border: 1px solid var(--stroke-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border-radius: 9999px ;
+  border-radius: 9999px;
 }
 /* Lista de links */
 ul {
@@ -115,7 +115,6 @@ ul {
 }
 
 ul li a {
-
   /* Forçando a tag "a" ocupar todo espaço disponível */
 
   display: flex;
@@ -137,9 +136,9 @@ ul li a {
 
   text-decoration: none;
   font-weight: 500;
-  
+
   /* Ajusta o comportamento do elemento na transição para hover */
-  transition: all .4s;
+  transition: all 0.4s;
 }
 /* Ajustando comportamento dos elementos para quando o mouse for passado em cima utilizando um "Pseudo-Selector"*/
 
@@ -158,7 +157,7 @@ ul li a:hover {
   font-size: 24px;
 }
 
-#social-links a{
+#social-links a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,4 +173,17 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* Media queries */
+
+/* Instruindo a variável bg-url para que a 
+partir de 700px o background de desktop seja exibido */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+  .dark {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
 }
